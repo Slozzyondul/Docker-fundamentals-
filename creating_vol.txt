@@ -1,0 +1,14 @@
+create a storage and use it in a  container
+docker volume create ourvol1 = creating volume labeled ourvol1
+docker volume ls |grep ourvol1 = display a list of all the directories inside the ourvol1 
+docker volume inspect ourvol1 = display the properties of the ourvol1 storage
+
+docker container run -it --name c1 --rm -v ourvol1:/ourvol1 alpine
+
+docker container run -d --name web -p 8080:80 -v ourvol1:/usr/share/nginx/html nginx = start a web server in the initially created volume
+
+sudo ls /var/lib/docker/volumes/ourvol1/_data = view availabe data in the ourvol1 despite stopping and removing ngnx server, the data is persitend in the volume
+
+ sudo cat /var/lib/docker/volumes/ourvol1/_data/index.html = view available data in the index.html file
+ 
+ 

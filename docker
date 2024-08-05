@@ -25,3 +25,4 @@ docker container run -d --name web httpd = create web docker contaner in detach 
 docker container ls -a
 
 cat >index.html = create and open a file in linux
+
