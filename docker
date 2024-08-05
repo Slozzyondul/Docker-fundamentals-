@@ -1,0 +1,27 @@
+docker
+docker image ls = show available  images in docker
+docker image pull alpine = pulling alpine image
+docker image pull nginx:alpine =pulling nginxalpine
+docker container run -i -t c1 alpine ash = create a container called c1
+docker container ls
+docker container ls -a
+docker container run -it --name web nginx bash = pull web nginx bash from hub
+cat /etc/hosts = open to view ip address in linux docker
+docker container inspect web |less = show more details of a container of web nginx 
+docker container inspect web |grep -i address = displays the docker container called web ip address
+find / -name index.html = searching for a folder on linux terminal
+docker container run -it --name curl curlimages/curl sh = creating a docker curl command line browser
+docker container stop web = stopping a container named web of nginx
+docker container rm web = removing the container
+docker container run -d --name web nginx = run server in detach mode
+docker container run -d --name web -P nginx = start nginx web docker container and map a any open port to local host
+elinks http://localhost:32768 = similar to curl to view webpages in terminal
+elinks --dump  http://localhost:32768 = similar to elink and curl
+curl http://192.168.43.88:32768 = view webpages
+
+apache web server
+docker container run -it --name web httpd bash = launch web server in interactive mode
+docker container run -d --name web httpd = create web docker contaner in detach mode
+docker container ls -a
+
+cat >index.html = create and open a file in linux
