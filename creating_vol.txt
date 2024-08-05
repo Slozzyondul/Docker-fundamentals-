@@ -10,5 +10,14 @@ docker container run -d --name web -p 8080:80 -v ourvol1:/usr/share/nginx/html n
 sudo ls /var/lib/docker/volumes/ourvol1/_data = view availabe data in the ourvol1 despite stopping and removing ngnx server, the data is persitend in the volume
 
  sudo cat /var/lib/docker/volumes/ourvol1/_data/index.html = view available data in the index.html file
+
+
+#use bind
+
+docker container run -d --name web -p 8080:80 --mount source=ourvol1,target=/usr/share/nginx/html nginx = mount
+docker container ls
+curl http://localhost:8080 = view the page using nginx library
+
+
  
  
