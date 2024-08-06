@@ -1,0 +1,7 @@
+docker image build -t nginx-app .
+docker image build -t nginx-app --no-cache .
+docker image ls |grep nginx-app
+docker container ls -a
+docker container run -d -p 80:80 nginx-app
+
+curl http://localhost
