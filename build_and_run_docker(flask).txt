@@ -1,0 +1,15 @@
+###build and run docker container###
+
+docker image build -t python-app . = reads instructions from the docker file when run
+
+docker image ls |grep python-app = displays the build container
+
+docker container run -d --name mypython python-app
+
+docker run -p 5000:5000 python-app = run the container python-app on port 5000
+
+docker conatainer ls -a
+
+curl http://172.17.0.2:5000
+
+elinks --dump http://172.17.0.2:5000
