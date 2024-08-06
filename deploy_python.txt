@@ -1,0 +1,9 @@
+Docker file
+ Deploy basic python app using docker
+ FROM python:3.9-slim = use python 3.9 slim image as the base
+ WORKDIR/app = set the work directory to /app
+ COPY requirements.txt = copy the requirements.txt file to the working directory
+ RUN pip install --no-cache-dir -r requirements.txt = install python dependencies
+ COPY . = copy the rest of the application files to the working directory
+ EXPOSE 5000 = expose port 5000, which the application listen on
+CMD["python","app.py"] = set the default command to run the python application
