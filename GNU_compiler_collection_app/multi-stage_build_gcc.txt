@@ -1,0 +1,19 @@
+#stage1: build the application
+
+FROM alpine:3.8 AS build
+RUN apk add --no-cache alpine-sdk = install alpine development kit(gcc compiler and libraris to ompile c)
+WORKDIR /bin = working directory for the docker image, all subsequent commands run from here.
+COPY . /bin
+RUN gcc -Wall hello.c -o hello
+
+
+#stage2: prepare runtime image  
+FROM alpine:3.8
+COPY --from=build /bin/hello /bin/hello
+CMD /bin/hello
+
+
+###buildin the container###
+docker image build -t gcc-app . = build  the docker  container 
+docker image ls | grep gcc-app
+docker container run gcc-app
