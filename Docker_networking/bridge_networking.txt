@@ -1,0 +1,16 @@
+###bridge networking(1 container)###
+
+docker network ls
+
+docker container run -d --name web --net=bridge -P nginx:alpine
+
+docker container run -d --name web -P nginx:alpine
+
+curl http://localhost:32768
+
+elinks --dump http://192.168.43.88:32768
+
+docker container exec -it web ash = openning the docker web container
+
+
+
