@@ -1,0 +1,18 @@
+bridge = default network driver, when a container is run without specified network its attached to a bridge network
+
+host = removes network isolation between the container and the docker host using the hosts network directly
+
+overlay = allows communication between containers of different docker hosts in a awarm cluster
+
+macvlan = allows assigning of MAC address to a container, making it appear as a physical device on the network
+
+None = disable all the network foa a container
+
+container network mode = used to share network stack of one container with others, allowing containers to communicate over the same network interfaces as if they were part of a single host
+
+docker network lss = docker command to manage network 
+
+docker network ls = list available networks
+
+sudo iptables -L -t nat = view docker ip tables
+
