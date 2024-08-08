@@ -9,3 +9,5 @@ elinks --dump http://192.168.43.88
 docker network ls
 
 docker container run -it --name c1 --net=none alpine
+
+docker network inspect none

@@ -1,0 +1,5 @@
+docker container run -d --name apache --net=bridge -P httpd
+
+docker container run -it --name curl --net=container:apache curlimages/curl ash
+
+docker network inspect bridge | less
