@@ -1,0 +1,5 @@
+docker container run -d --name web --net=host nginx
+
+docker container run -it --name curl --net=host curlimages/curl ash
+
+elinks --dump http://192.168.43.88
