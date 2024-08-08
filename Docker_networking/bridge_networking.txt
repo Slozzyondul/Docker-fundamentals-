@@ -13,4 +13,10 @@ elinks --dump http://192.168.43.88:32768
 docker container exec -it web ash = openning the docker web container
 
 
+###bridge networking(2 containers)###
+docker container run -d --name web --net=bridge -p 80:80 nginx:alpine = creating first container
+
+docker container run -it --name curl --net=bridge curlimages/curl ash = creating second container
+
+docker network inspect bridge = view bridge information
 
