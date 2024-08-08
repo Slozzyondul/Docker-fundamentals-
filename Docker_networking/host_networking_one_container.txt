@@ -1,0 +1,3 @@
+docker network inspect host
+
+docker container run -it --name c2 --net=host alpine 

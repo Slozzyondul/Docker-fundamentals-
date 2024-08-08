@@ -20,3 +20,4 @@ docker container run -it --name curl --net=bridge curlimages/curl ash = creating
 
 docker network inspect bridge = view bridge information
 
+
