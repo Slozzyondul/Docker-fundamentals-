@@ -1,0 +1,15 @@
+###deploying multiple nginx servers###
+
+nginx servers, each with its own IP address using macvlan network mode
+
+1. create the macvlan network
+docker network create -d macvlan --subnet=192.168.43.0/24 --gateway=192.168.43.2 -o parent=wlp1s0 my_macvlan_network
+
+2. run the nginx containers on the macvlan network
+docker container run -d --name nginx1 --network my_macvlan_network --ip 192.168.43.201 nginx:alpine
+
+docker container run -d --name nginx2 --network my_macvlan_network --ip 192.168.43.202 nginx:alpine
+
+3. access the web servers
+http://192.168.43.201
+http://192.168.43.202
