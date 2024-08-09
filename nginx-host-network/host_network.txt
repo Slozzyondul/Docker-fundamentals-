@@ -1,0 +1,22 @@
+###deploying an nginx web server on the host network
+
+deploy an nginx web server using docker's "host" network mode
+
+1. create the project structure
+
+2. create the html file 
+
+3. run the nginx container on the host nnetwork
+
+4.access the web server
+
+###run the nginx container on the host network
+##ro = read only 
+##rw = read and write
+docker container run -d --name nginx-host --network host -v $PWD/html:/usr/share/nginx/html:ro nginx:alpine
+
+echo $HOME
+echo $PWD
+
+ip a s 
+docker container inspect nginx-host |grep -i address

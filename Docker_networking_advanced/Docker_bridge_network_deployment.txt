@@ -34,6 +34,5 @@ docker container run -d --name my_web_server_container --network my_bridge_netwo
 ###accesing the application
 http:localhost/messages.php
 
-
-
+ 
 = view available database images
