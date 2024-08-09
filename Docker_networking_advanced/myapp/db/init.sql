@@ -19,3 +19,5 @@ INSERT INTO messages (text) VALUES ("Thinking about contributing to open-source 
 INSERT INTO messages (text) VALUES ("Debugging can be frustrating but rewarding.");
 INSERT INTO messages (text) VALUES ("Just started learning Go, and it's interesting.");
 INSERT INTO messages (text) VALUES ("I love experimenting with new programming languages.");
+
+
