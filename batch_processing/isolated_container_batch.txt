@@ -1,0 +1,22 @@
+the container doesnt need network access => "none" network mode
+
+1. create a Dockerfile for the bath processing application
+
+2. create the batch script (python for my scenario)
+
+3. build the docker image
+
+###build the docker image for the batch processing application
+
+-docker image build -t batch-processing-app .
+
+-docker image ls | grep batch-processing-app
+
+4. run the container in "none" network mode
+-docker container run --network none --name batch-job batch-processing-app
+
+5. accessing the report
+
+- docker cp batch-job:/app/report.txt ./report.txt
+
+view report on the host = cat report.txt

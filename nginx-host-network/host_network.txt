@@ -6,7 +6,7 @@ deploy an nginx web server using docker's "host" network mode
 
 2. create the html file 
 
-3. run the nginx container on the host nnetwork
+3. run the nginx container on the host ndetwork
 
 4.access the web server
 
