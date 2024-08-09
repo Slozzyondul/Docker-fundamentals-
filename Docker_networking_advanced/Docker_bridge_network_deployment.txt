@@ -10,3 +10,28 @@ In this scenario the application consists of HTML, PHP served by Nginx web serve
 
 
 4. Access the web application
+
+###creating a docker network###
+docker network create my_bridge_network
+
+###building the database container 
+docker image build -t my_database_image -f Dockerfile.db .
+docker image ls | grep my_database_image 
+
+###runing the database container
+docker container run -d --name my_database_container --network my_bridge_network my_database_image
+
+
+###building the web server container
+docker image build -t my_web_server_image -f Dockerfile.web .
+docker image ls | grep my_web_server_image 
+
+###runing the web server container
+docker container run -d --name my_web_server_container --network my_bridge_network -p 80:80 my_web_server_image
+
+###accesing the application
+http:localhost/messages.php
+
+
+
+= view available database images
