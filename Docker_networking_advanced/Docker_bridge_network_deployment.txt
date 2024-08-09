@@ -21,6 +21,8 @@ docker image ls | grep my_database_image
 ###runing the database container
 docker container run -d --name my_database_container --network my_bridge_network my_database_image
 
+docker exec -it my_database_container mysql -u root -p = access docker databases
+
 
 ###building the web server container
 docker image build -t my_web_server_image -f Dockerfile.web .
