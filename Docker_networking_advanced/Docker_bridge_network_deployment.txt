@@ -1,0 +1,12 @@
+###deploy a web application using docker bridge network###
+
+In this scenario the application consists of HTML, PHP served by Nginx web server and MYSQL database 
+
+1. create the project structure
+
+2. create the application files
+
+3. build and run containers
+
+
+4. Access the web application
