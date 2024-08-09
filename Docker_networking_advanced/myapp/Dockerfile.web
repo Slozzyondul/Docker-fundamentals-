@@ -1,0 +1,20 @@
+#use the official PHP image with nginx
+FROM php:7.4-fpm-alpine
+
+#install nginx
+RUN apk add --no-cache nginx
+
+#install mysqli extension
+RUN docker-php-ext-install mysqli
+
+#copy the nginx configuration files into the container
+COPY nginx.conf /etc/nginx/nginx.conf
+
+#copy the web application files into the container
+COPY ./html /var/www/html
+
+#expose port 80
+EXPOSE 80
+
+#start nginx and php-fpm
+CMD nginx && php-fpm

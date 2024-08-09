@@ -1,0 +1,9 @@
+#Use the official MYSQL image
+FROM mysql:5.7
+
+#set environment variables for MYSQL
+ENV MYSQL_ROOT_PASSWORD=rootpassword
+ENV MYQL_DATABASE=mydatabase
+
+#initialize the database with the SQL script
+COPY ./db/init.sql /docker-entrypoint-initdb.d/
