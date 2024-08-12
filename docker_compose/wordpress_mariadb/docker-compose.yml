@@ -1,0 +1,20 @@
+services:
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: password
+      WORDPRESS_DB_NAME: wordpressdb
+    depends_on:
+      - db
+
+  db:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpressdb
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password

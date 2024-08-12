@@ -1,0 +1,20 @@
+services:
+  php:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mydb 
+      MYSQL_USER: user 
+      MYSQL_PASSWORD: password
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+volumes:
+  mariadb_data:

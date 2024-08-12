@@ -1,0 +1,19 @@
+###deploy php application with mariadb database in docker compose###
+
+create two separate dockerfiles (php app and mariadb) 
+use docker-compose.yaml to manage multi-container setup
+
+docker compose up --build = this will build the php image, start mariadb container then  start the php container
+
+###access the application##
+
+http://localhost
+
+docker container ls -a
+
+docker volume ls
+
+docker network ls
+
+
+docker compose down --volumes
