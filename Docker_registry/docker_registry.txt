@@ -1,0 +1,30 @@
+docker registry = storage and content system that holds named docker images, available in different tagged versions.
+users can push and pull images from a regstry.
+docker registry is a public central location for storing and managing docker images.
+
+###setting up a private docker registry###
+1. docker image pull registry:2
+2. docker container run -d -p 5000:5000 --restart=always --name registry -v registry:/var/lib/registry registry:2
+
+3. docker container ls -a
+4. docker container ls |grep gcc-app
+5. docker image tag gcc-app 192.168.43.88:5000/gcc-app
+6. doker image push 192.168.43.88:5000/gcc-app
+7. docker image rm 192.168.43.88:5000/gcc-app
+7. docker image pull 192.168.43.88:5000/gcc-app
+ 
+##verify
+curl http://localhost:5000/v2/ 
+
+
+###configure docker to allow insecure registries
+1. cat /etc/docker/daemon.json
+2. nano /etc/docker/daemon.json
+3.
+{
+    "insecure-registries": ["192.168.43.88:5000"]
+}
+
+4. systemctl restart docker
+
+5. docker image pull 192.168.43.88/5000/gcc-app
