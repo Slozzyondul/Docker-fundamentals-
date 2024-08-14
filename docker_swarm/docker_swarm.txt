@@ -1,0 +1,9 @@
+container orchestration tool 
+manage multiple containers deployed across multiple host machines
+provides high availability and scalability for applications by turning a pool of docker hosts into a single file, virtual docker host
+docker swarm can deploy, scale and manage containerized applications across a cluster of machines
+
+docker image pull docker:dind = pull image used to create docker containers work nodes
+
+docker swarm is designed to work across multiple nodes 
+however by simulating of multi-node swarm on a single machine by creating multiple docker swarm nodes as docker containers
